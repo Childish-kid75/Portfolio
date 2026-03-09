@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tshiamo Mosweu — CV</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; max-width:760px; margin:48px auto; padding:0 18px; color:#111; line-height:1.5; }
+    header { border-bottom:1px solid #e6e6e6; padding-bottom:12px; margin-bottom:18px; }
+    h1 { margin:0; font-size:30px; }
+    p.lead { margin:6px 0 0; color:#444; }
+    section { margin-top:18px; }
+    .meta { color:#666; font-size:14px; }
+    a { color:#0366d6; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tshiamo Mosweu</h1>
+    <p class="lead">Diploma in Information Technology • Cloud, IoT, Networking, Cybersecurity</p>
+    <p class="meta">Govan Mbeki, Mpumalanga • <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+  </header>
+
+  <section>
+    <h2>Professional Summary</h2>
+    <p>Diploma in Information Technology student with strong academic performance and hands-on experience in cloud computing, networking, IoT, and cybersecurity. Motivated, curious, and adaptable, eager to apply problem-solving and innovative thinking to real-world IT challenges while continuously expanding knowledge in emerging technologies.</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <p>Cloud concepts (Azure/AWS); Operating systems; Docker & containers; Networking & IoT; Cybersecurity; PowerShell; Databases; Web programming.</p>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+    <ul>
+      <li><strong>Human Detection Probe</strong> — Arduino PIR sensor system with alerts (IoT 261).</li>
+      <li><strong>Automated System Monitoring</strong> — PowerShell monitoring tool with CSV/HTML reporting (OPS 262).</li>
+      <li><strong>System Attack Simulation</strong> — Kali Linux VM simulation and mitigation documentation (PET361).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+  </section>
+</body>
+</html>
