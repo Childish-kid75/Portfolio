@@ -2,4 +2,4 @@
 Final‑year IT student passionate about networking, cloud infrastructure, and reproducible development with Docker.
 ## About
 I’m Tshiamo Mosweu, a final‑year IT student at Belgium Campus iTvesity based in Govan Mbeki, Mpumalanga. I focus on **cloud deployment**, **containerization (Docker)**, and **CI/CD automation (GitHub Actions)**, with a strong interest in networking and infrastructure. I build reproducible development environments using Docker and Docker Compose, publish container images to registries, and automate build → test → deploy pipelines to cloud platforms (Azure/AWS). I’m actively building a portfolio of containerized projects and automated workflows and am open to internships or junior roles in DevOps, cloud engineering, or network operations.  
-**Email:** 601286@student.belgiumcampus.ac.za
+**Email:** tshiamogolo@gmail.com
