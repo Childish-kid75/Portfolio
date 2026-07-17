@@ -2,47 +2,428 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Tshiamo Mosweu — CV</title>
+  <title>Tshiamo Mosweu — IT Professional Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tshiamo Mosweu - IT Graduate Portfolio, Diploma in Information Technology">
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; max-width:760px; margin:48px auto; padding:0 18px; color:#111; line-height:1.5; }
-    header { border-bottom:1px solid #e6e6e6; padding-bottom:12px; margin-bottom:18px; }
-    h1 { margin:0; font-size:30px; }
-    p.lead { margin:6px 0 0; color:#444; }
-    section { margin-top:18px; }
-    .meta { color:#666; font-size:14px; }
-    a { color:#0366d6; text-decoration:none; }
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      color: #1a1a2e;
+      line-height: 1.6;
+    }
+
+    /* ===== CARD CONTAINER ===== */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      padding: 50px 60px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 30px 20px;
+        border-radius: 16px;
+      }
+    }
+
+    /* ===== HEADER / PROFILE ===== */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      border-bottom: 3px solid #e8e8f0;
+      padding-bottom: 28px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .profile-avatar {
+      flex-shrink: 0;
+      width: 130px;
+      height: 130px;
+      background: linear-gradient(135deg, #4a00e0, #8e2de2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      font-weight: 600;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(74, 0, 224, 0.25);
+    }
+
+    .profile-info h1 {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .profile-info .title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #4a00e0;
+      margin-bottom: 6px;
+    }
+
+    .profile-info .location {
+      font-size: 15px;
+      color: #5a5a7a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .profile-info .location a {
+      color: #4a00e0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .profile-info .location a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== BADGE / DOWNLOAD BUTTON ===== */
+    .badge-group {
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .btn-pdf {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a2e;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-pdf:hover {
+      background: #4a00e0;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(74, 0, 224, 0.3);
+    }
+
+    .status-badge {
+      font-size: 13px;
+      background: #e6f7e6;
+      color: #1a7a3a;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      margin-top: 30px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1a2e;
+      letter-spacing: -0.3px;
+      border-left: 5px solid #4a00e0;
+      padding-left: 14px;
+      margin-bottom: 12px;
+    }
+
+    .section-content {
+      padding-left: 20px;
+    }
+
+    .section-content p,
+    .section-content li {
+      font-size: 16px;
+      color: #2d2d44;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-left: 20px;
+      margin-top: 4px;
+    }
+
+    .skill-tag {
+      background: #f0edff;
+      color: #3d2a8a;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* ===== PROJECTS ===== */
+    ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #4a00e0;
+      font-weight: 700;
+    }
+
+    ul li strong {
+      color: #1a1a2e;
+    }
+
+    ul li .project-links {
+      display: inline-block;
+      margin-left: 8px;
+    }
+
+    ul li .project-links a {
+      color: #4a00e0;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-right: 12px;
+    }
+
+    ul li .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== CONTACT / SOCIAL ===== */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-left: 20px;
+      margin-top: 6px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #1a1a2e;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 40px;
+      background: #f5f5fa;
+      transition: 0.2s;
+      font-size: 15px;
+    }
+
+    .social-links a:hover {
+      background: #4a00e0;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(74, 0, 224, 0.25);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer-note {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #e8e8f0;
+      text-align: center;
+      font-size: 14px;
+      color: #7a7a9a;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .badge-group {
+        align-items: center;
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .profile-info .location {
+        justify-content: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .skills-grid {
+        justify-content: center;
+      }
+
+      ul {
+        padding-left: 0;
+      }
+
+      ul li {
+        padding-left: 20px;
+      }
+
+      .section-content {
+        padding-left: 0;
+      }
+
+      .btn-pdf {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Tshiamo Mosweu</h1>
-    <p class="lead">Diploma in Information Technology • Cloud, IoT, Networking, Cybersecurity</p>
-    <p class="meta">Govan Mbeki, Mpumalanga • <a href="mailto:your.email@example.com">tshiamogolo@gmail.com</a></p>
-  </header>
 
-  <section>
-    <h2>Professional Summary</h2>
-    <p>Diploma in Information Technology student with strong academic performance and hands-on experience in cloud computing, networking, IoT, and cybersecurity. Motivated, curious, and adaptable, eager to apply problem-solving and innovative thinking to real-world IT challenges while continuously expanding knowledge in emerging technologies.</p>
-  </section>
+  <div class="container">
 
-  <section>
-    <h2>Skills</h2>
-    <p>Cloud concepts (Azure/AWS); Operating systems; Docker & containers; Networking & IoT; Cybersecurity; PowerShell; Databases; Web programming.</p>
-  </section>
+    <!-- ===== HEADER ===== -->
+    <header class="profile-header">
+      <div class="profile-avatar">TM</div>
 
-  <section>
-    <h2>Selected Projects</h2>
-    <ul>
-      <li><strong>Human Detection Probe</strong> — Arduino PIR sensor system with alerts (IoT 261).</li>
-      <li><strong>Automated System Monitoring</strong> — PowerShell monitoring tool with CSV/HTML reporting (OPS 262).</li>
-      <li><strong>System Attack Simulation</strong> — Kali Linux VM simulation and mitigation documentation (PET361).</li>
-    </ul>
-  </section>
+      <div class="profile-info">
+        <h1>Tshiamo Mosweu</h1>
+        <div class="title">📘 Diploma in Information Technology</div>
+        <div class="location">
+          📍 Govan Mbeki, Mpumalanga &nbsp;•&nbsp;
+          📧 <a href="mailto:tshiamo.mosweu@gmail.com">tshiamo.mosweu@gmail.com</a>
+        </div>
+      </div>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your.email@example.com">tshiamogolo@gmail.com</a></p>
-  </section>
+      <div class="badge-group">
+        <a href="#" class="btn-pdf" id="pdfDownloadBtn">📄 Download PDF</a>
+        <span class="status-badge">✅ Open to Internships</span>
+      </div>
+    </header>
+
+    <!-- ===== SUMMARY ===== -->
+    <section>
+      <h2>Professional Summary</h2>
+      <div class="section-content">
+        <p>
+          Diploma in Information Technology student with strong academic performance and hands-on experience in 
+          <strong>cloud computing, networking, IoT, and cybersecurity</strong>. Motivated, curious, and adaptable, 
+          eager to apply problem-solving and innovative thinking to real-world IT challenges while continuously 
+          expanding knowledge in emerging technologies.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section>
+      <h2>Education</h2>
+      <div class="section-content">
+        <p>
+          <strong>Diploma in Information Technology</strong><br>
+          <span style="color:#5a5a7a;">Expected Graduation: 2026</span>
+        </p>
+        <p style="margin-top:6px; color:#3d3d5a; font-size:15px;">
+          📚 Relevant Coursework: Cloud Computing, Networking, Cybersecurity, Internet of Things (IoT), Operating Systems, Databases, Web Programming
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">☁️ Cloud (Azure/AWS)</span>
+        <span class="skill-tag">🐳 Docker & Containers</span>
+        <span class="skill-tag">🌐 Networking</span>
+        <span class="skill-tag">📡 IoT</span>
+        <span class="skill-tag">🔐 Cybersecurity</span>
+        <span class="skill-tag">⚡ PowerShell</span>
+        <span class="skill-tag">🗄️ Databases</span>
+        <span class="skill-tag">🌍 Web Programming</span>
+        <span class="skill-tag">🐧 Linux / Kali</span>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section>
+      <h2>Selected Projects</h2>
+      <ul>
+        <li>
+          <strong>Human Detection Probe</strong> — Arduino PIR sensor system with real-time alerts (IoT 261)
+          <span class="project-links">
+            <a href="#">🔗 GitHub</a>
+          </span>
+        </li>
+        <li>
+          <strong>Automated System Monitoring</strong> — PowerShell monitoring tool with CSV/HTML reporting (OPS 262)
+          <span class="project-links">
+            <a href="#">🔗 GitHub</a>
+          </span>
+        </li>
+        <li>
+          <strong>System Attack Simulation</strong> — Kali Linux VM simulation and mitigation documentation (PET361)
+          <span class="project-links">
+            <a href="#">🔗 GitHub</a>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== CONTACT / SOCIAL ===== -->
+    <section>
+      <h2>Let's Connect</h2>
+      <div class="social-links">
+        <a href="mailto:tshiamo.mosweu@gmail.com">📧 Email</a>
+        <a href="#">🔗 LinkedIn</a>
+        <a href="#">💻 GitHub</a>
+        <a href="#">📱 Twitter / X</a>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      ✦ Built with ❤️ — Tshiamo Mosweu • 2026 ✦
+    </div>
+
+  </div>
+
+  <!-- ===== PDF DOWNLOAD SCRIPT ===== -->
+  <script>
+    document.getElementById('pdfDownloadBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('📄 PDF Download Coming Soon!\n\nTo add a real PDF:\n1. Save this page as PDF (Ctrl+P → Save as PDF)\n2. Upload it to your GitHub repository\n3. Replace "#" with the PDF file link');
+    });
+  </script>
+
 </body>
 </html>
