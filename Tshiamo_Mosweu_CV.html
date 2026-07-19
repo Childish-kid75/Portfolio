@@ -131,6 +131,10 @@
       box-shadow: 0 8px 20px rgba(74, 0, 224, 0.3);
     }
 
+    .btn-pdf:active {
+      transform: scale(0.95);
+    }
+
     .status-badge {
       font-size: 13px;
       background: #e6f7e6;
@@ -190,9 +194,10 @@
     }
 
     ul li {
-      margin-bottom: 12px;
+      margin-bottom: 18px;
       padding-left: 24px;
       position: relative;
+      line-height: 1.6;
     }
 
     ul li::before {
@@ -207,9 +212,16 @@
       color: #1a1a2e;
     }
 
+    ul li .project-description {
+      display: block;
+      color: #5a5a7a;
+      font-size: 14px;
+      margin: 2px 0 6px 0;
+    }
+
     ul li .project-links {
       display: inline-block;
-      margin-left: 8px;
+      margin-top: 4px;
     }
 
     ul li .project-links a {
@@ -217,7 +229,8 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
-      margin-right: 12px;
+      margin-right: 16px;
+      display: inline-block;
     }
 
     ul li .project-links a:hover {
@@ -307,11 +320,36 @@
         justify-content: center;
       }
     }
+
+    /* ===== PRINT STYLES (for PDF) ===== */
+    @media print {
+      body {
+        background: white;
+        padding: 20px;
+      }
+      .container {
+        box-shadow: none;
+        padding: 30px;
+      }
+      .btn-pdf {
+        display: none !important;
+      }
+      .status-badge {
+        display: none !important;
+      }
+      .social-links a {
+        background: none !important;
+        padding: 0 10px 0 0 !important;
+      }
+      .profile-avatar {
+        box-shadow: none !important;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <div class="container" id="portfolio-content">
 
     <!-- ===== HEADER ===== -->
     <header class="profile-header">
@@ -322,12 +360,12 @@
         <div class="title">📘 Diploma in Information Technology</div>
         <div class="location">
           📍 Govan Mbeki, Mpumalanga &nbsp;•&nbsp;
-          📧 <a href="mailto:tshiamo.mosweu@gmail.com">tshiamogolo@gmail.com</a>
+          📧 <a href="mailto:tshiamogolo@gmail.com">tshiamogolo@gmail.com</a>
         </div>
       </div>
 
       <div class="badge-group">
-        <a href="#" class="btn-pdf" id="pdfDownloadBtn">📄 Download PDF</a>
+        <button class="btn-pdf" id="pdfDownloadBtn">📄 Download PDF</button>
         <span class="status-badge">✅ Open to Internships</span>
       </div>
     </header>
@@ -356,6 +394,9 @@
         <p style="margin-top:6px; color:#3d3d5a; font-size:15px;">
           📚 Relevant Coursework: Cloud Computing, Networking, Cybersecurity, Internet of Things (IoT), Operating Systems, Databases, Web Programming
         </p>
+        <p style="margin-top:6px; color:#3d3d5a; font-size:15px;">
+          🏆 <strong>16 Distinctions</strong> | Weighted Average: <strong>68.8%</strong>
+        </p>
       </div>
     </section>
 
@@ -372,29 +413,84 @@
         <span class="skill-tag">🗄️ Databases</span>
         <span class="skill-tag">🌍 Web Programming</span>
         <span class="skill-tag">🐧 Linux / Kali</span>
+        <span class="skill-tag">🛠️ DevOps</span>
+        <span class="skill-tag">🐍 Python</span>
+        <span class="skill-tag">⚙️ Chef</span>
       </div>
     </section>
 
     <!-- ===== PROJECTS ===== -->
     <section>
-      <h2>Selected Projects</h2>
+      <h2>Featured Projects</h2>
       <ul>
+        <!-- Project 1: System Monitoring (84%) -->
         <li>
-          <strong>Human Detection Probe</strong> — Arduino PIR sensor system with real-time alerts (IoT 261)
+          <strong>🚀 Automated System Monitoring Tool</strong>
+          <span class="project-description">PowerShell-based monitoring with CPU tracking, service management, and automated HTML/CSV reporting (OPS262 — 84% Distinction)</span>
           <span class="project-links">
-            <a href="#">🔗 GitHub</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/tree/main/projects/system-monitoring" target="_blank">🔗 View Project</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/blob/main/projects/system-monitoring/OPS262_Project.pdf" target="_blank">📄 View Report</a>
           </span>
         </li>
+
+        <!-- Project 2: Human Detection (77%) -->
         <li>
-          <strong>Automated System Monitoring</strong> — PowerShell monitoring tool with CSV/HTML reporting (OPS 262)
+          <strong>👤 Human Detection Probe</strong>
+          <span class="project-description">Arduino PIR sensor system with buzzer/LED alerts and I2C LCD status display (IOT261 — 77% Distinction)</span>
           <span class="project-links">
-            <a href="#">🔗 GitHub</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/tree/main/projects/human-detection" target="_blank">🔗 View Project</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/blob/main/projects/human-detection/IOT261_Project_TshiamoMosweu_601286.pdf" target="_blank">📄 View Report</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/blob/main/projects/human-detection/IOT261_HumanDetection_TshiamoMosweu.brd" target="_blank">🔧 Circuit Design</a>
           </span>
         </li>
+
+        <!-- Project 3: Ransomware Simulation -->
         <li>
-          <strong>System Attack Simulation</strong> — Kali Linux VM simulation and mitigation documentation (PET361)
+          <strong>🔐 Ransomware Simulation</strong>
+          <span class="project-description">Python ransomware with XOR encryption, password protection, and one-click activation (EHA361 — Exam Project)</span>
           <span class="project-links">
-            <a href="#">🔗 GitHub</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/tree/main/projects/eha361-milestone4-ransomware" target="_blank">🔗 View Project</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/blob/main/projects/eha361-milestone4-ransomware/Tshiamo_Mosweu_Milestone4_EHA361.pdf" target="_blank">📄 View Report</a>
+          </span>
+        </li>
+
+        <!-- Project 4: Privilege Escalation -->
+        <li>
+          <strong>⚡ Privilege Escalation Attack</strong>
+          <span class="project-description">SUID binary exploitation from normal user to root on Kali Linux (EHA361 — Exam Project)</span>
+          <span class="project-links">
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/tree/main/projects/eha361-milestone3-privilege-escalation" target="_blank">🔗 View Project</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/blob/main/projects/eha361-milestone3-privilege-escalation/EHA361_Milestone%203_Tshiamo%20Mosweu%20.pdf" target="_blank">📄 View Report</a>
+          </span>
+        </li>
+
+        <!-- Project 5: Buffer Overflow -->
+        <li>
+          <strong>💥 Buffer Overflow Demonstration</strong>
+          <span class="project-description">C program memory corruption and segmentation fault demonstration (EHA361 — Exam Project)</span>
+          <span class="project-links">
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/tree/main/projects/eha361-milestone2-bufferoverflow" target="_blank">🔗 View Project</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/blob/main/projects/eha361-milestone2-bufferoverflow/EHA361_Milestone%202_Tshiamo_Mosweu_601286.pdf" target="_blank">📄 View Report</a>
+          </span>
+        </li>
+
+        <!-- Project 6: Keylogger Detection -->
+        <li>
+          <strong>🕵️ Keylogger Simulation & Detection</strong>
+          <span class="project-description">Attack simulation and defensive detection in isolated VirtualBox lab (EHA361 — Exam Project)</span>
+          <span class="project-links">
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/tree/main/projects/eha361-milestone1-keylogger" target="_blank">🔗 View Project</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/blob/main/projects/eha361-milestone1-keylogger/EHA361-Milstone1.pdf" target="_blank">📄 View Report</a>
+          </span>
+        </li>
+
+        <!-- Project 7: DevOps Toolchain -->
+        <li>
+          <strong>🐳 DevOps Toolchain Implementation</strong>
+          <span class="project-description">Docker containerization, Chef configuration management, and Git collaboration workflow (DOP361 — 72% Distinction)</span>
+          <span class="project-links">
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/tree/main/projects/devops-toolchain" target="_blank">🔗 View Project</a>
+            <a href="https://github.com/Childish-kid75/Tshiamo_Mosweu_CV/blob/main/projects/devops-toolchain/Tshiamo_Mosweu_DOP361_Milestone3.pdf" target="_blank">📄 View Report</a>
           </span>
         </li>
       </ul>
@@ -405,8 +501,8 @@
       <h2>Let's Connect</h2>
       <div class="social-links">
         <a href="mailto:tshiamogolo@gmail.com">📧 Email</a>
-        <a href="www.linkedin.com/in/tshiamo-mosweu-b94284351">🔗 LinkedIn</a>
-        <a href="https://github.com/Childish-kid75">💻 GitHub</a>
+        <a href="https://www.linkedin.com/in/tshiamo-mosweu-b94284351" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/Childish-kid75" target="_blank">💻 GitHub</a>
       </div>
     </section>
 
@@ -416,11 +512,53 @@
 
   </div>
 
-  <!-- ===== PDF DOWNLOAD SCRIPT ===== -->
+  <!-- ===== PDF GENERATION SCRIPT ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
   <script>
-    document.getElementById('pdfDownloadBtn').addEventListener('click', function(e) {
-      e.preventDefault();
-      alert('📄 PDF Download Coming Soon!\n\nTo add a real PDF:\n1. Save this page as PDF (Ctrl+P → Save as PDF)\n2. Upload it to your GitHub repository\n3. Replace "#" with the PDF file link');
+    document.getElementById('pdfDownloadBtn').addEventListener('click', function() {
+      const button = this;
+      const originalText = button.innerHTML;
+      
+      // Show loading state
+      button.innerHTML = '⏳ Generating PDF...';
+      button.disabled = true;
+      
+      // Get the portfolio content
+      const element = document.getElementById('portfolio-content');
+      
+      // PDF options
+      const opt = {
+        margin:        [0.5, 0.5, 0.5, 0.5],
+        filename:     'Tshiamo_Mosweu_CV.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { 
+          scale: 2,
+          useCORS: true,
+          letterRendering: true
+        },
+        jsPDF:        { 
+          unit: 'in', 
+          format: 'a4', 
+          orientation: 'portrait' 
+        }
+      };
+      
+      // Generate PDF
+      html2pdf().set(opt).from(element).save().then(function() {
+        // Reset button after PDF is generated
+        button.innerHTML = originalText;
+        button.disabled = false;
+      }).catch(function(error) {
+        console.error('PDF generation error:', error);
+        button.innerHTML = '❌ Error - Try Again';
+        button.disabled = false;
+        
+        // Reset after 3 seconds
+        setTimeout(() => {
+          button.innerHTML = originalText;
+        }, 3000);
+      });
     });
   </script>
 
